@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-
-gem 'ruby'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'     # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 # gem 'sqlite3'                           # Use sqlite3 as the database for Active Record
@@ -33,6 +31,10 @@ gem 'bootstrap-glyphicons'
 gem 'sass-rails', '~> 5.0'                # Use SCSS for stylesheets
 source 'https://rails-assets.org' do
 gem 'rails-assets-tether', '>= 1.1.0'
+end
+
+group :production do
+  gem'rails_12factor'
 end
 
 group :development, :test do
