@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/application.scss">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <nav class="navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-1 col-sm-1 col-md-1  nav nav-pills">
+            <a href= "/" class="blue-ivy">Home</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <a href= "/about" class="blue-ivy">About</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <a href= "/thekoopmankode" class="blue-ivy">Blog</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <% if session[:admin_id] %>
+              <%= link_to "Admin", admin_path(session[:admin_id]), method: :get, :class => 'blue-ivy' %>
+            <% end %>
+          </div>
+          <div class="nav_bar_sign", style="float:right">
+            <% if session[:admin_id] %>
+              <a href= "/logout" class="blue-ivy"><sup class="email-tag"></sup> <span class="glyphicon glyphicon-log-out"></span></a>
+            <% else %>
+              <a href= "/login" class="blue-ivy"><sup class="email-tag"></sup> <span class="glyphicon glyphicon-log-in"></span></a>
+            <% end%>
+          </div>
+        </div>
+      </div>
+    </nav>
+      <div class="container-fluid double-pad-top">
+        <% if session[:admin_id] %>
+          <div class="col-xs-2 col-sm-2 col-md-2">
+            <a href= "/posts/new" class="blue-ivy" >New Post</a>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2">
+            <a href= "/categories/new" class="blue-ivy" >New Category</a>
+          </div>
+        <% end %>
+      </div>
+
+    <div class="container center-vert" align="center">
+      <% @admins.each do |ad| %>
+        <%= ad.user_name %>
+      <% end %>
+    </div>
+  </body>
+</html>

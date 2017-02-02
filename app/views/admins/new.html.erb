@@ -1,0 +1,14 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <%= form_for(@admin) do |f| %> 
+    Username: <%= f.text_field :user_name %><br>
+    Email: <%= f.text_field :email %><br>
+    Password: <%= f.password_field :password %><br>
+    Password Confirmation: <%= f.password_field :password_confirmation %><br>
+    <%= f.submit "Submit" %>
+  <% end %>
+</body>
+</html>

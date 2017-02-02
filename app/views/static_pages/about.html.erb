@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/images/head_shots">
+    <link rel="stylesheet" href="/application.scss">
+    <link rel="stylesheet" href="/glyphicons/glyph_github.png">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-5 col-sm-5 col-md-5  nav nav-pills">
+            <a href= "/" class="blue-ivy">Home</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <a href= "/about" class="blue-ivy">About</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <a href= "/thekoopmankode" class="blue-ivy">Blog</a>
+          </div>
+          <div class="nav_bar_sign", style="float:right">
+            <% if session[:admin_id] %>
+              <a href= "/logout" class="blue-ivy"><sup class="email-tag"></sup> <span class="glyphicon glyphicon-log-out"></span></a>
+            <% else %>
+              <a href= "/login" class="blue-ivy"><sup class="email-tag"></sup> <span class="glyphicon glyphicon-log-in"></span></a>
+            <% end%>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid double-pad-top">
+      <div class="row quad-pad-top">
+        <% if session[:admin_id] %>
+          <div class="col-xs-1 col-sm-1 col-md-1">
+              <%= link_to "Admin", admin_path(session[:admin_id]), method: :get, :class => 'blue-ivy' %>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2" align="center">
+            <a href= "/posts/new" class="blue-ivy" >New Post</a>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4">
+            <a href= "/categories/new" class="blue-ivy" >New Category</a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+      <br>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <h1 class="title" align="center">About Me</h1>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-12 col-md-12" align="center">
+          <img src="assets/head_shots/head_shot_04.jpg" class="img-thumbnail resize-img" >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <h2 align="center"> Info </h2>
+              <br>
+              <div class="col-sm-2 col-md-2">
+              </div>
+              <div class="col-sm-8 col-md-8">
+                <img src="assets/glyphicons/glyph_linkedin.png" class="glyph-size">  <a href="https://www.linkedin.com/in/raoul-koopman" target="_blank">linkedin.com/in/raoul-koopman</a><br>
+                <img src="assets/glyphicons/glyph_github.png" class="glyph-size">  <a href="https://github.com/RKoopman" target="_blank">RKoopman</a>
+              </div>
+              <div class="col-sm-2 col-md-2">
+              </div>
+              <br><br><br>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-12 col-md-12" align="center">
+              <h2 align="center">Technical Skills</h2><br>
+              <div class="col-sm-3 col-md-3">
+                Ruby <br> Sinatra <br> Rails
+              </div>
+              <div class="col-sm-3 col-md-3">
+                SQL <br> Activerecord
+              </div>
+              <div class="col-sm-3 col-md-3">
+                JavaScript <br> React <br> Redux
+              </div>
+              <div class="col-sm-3 col-md-3">
+                Bootstrap <br> HTML <br> CSS
+              </div>
+
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <h2 align="center">Education</h2>
+              <br>
+              <p>
+                <strong class="project-title">Flatiron School</strong> - New York, NY - 2016 <br>
+                + Full Stack Web Development
+              </p><br>
+              <p>
+                <strong class="project-title">Tompkins Cortland Community College</strong> - Dryden, NY - 2014 <br>
+                + Degree: Outdoor Leadership
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+
+           </div>
+         </div>
+          <br>
+
+
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <h2 align="center"> My Coding Origin Story </h2>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <p class="col-sm-12 col-md-12" align="center">
+                In September (2015) I drove  cross country and moved out to Los Angeles with minimal plans
+                (if I remember correctly the only real plans I had were to save up some money and start up my own paddleboarding lesson service).
+                I was working in a bike shop when a few of the other mechanics invited me to go mountain biking with them.
+                Having been on a bike my entire life, had some decent experience when it came to mtn biking, and I already had my bike (even though
+                I’ve had it since highschool). So I showed up and boy… I was wrong. These guys were in a completely different class. After the 9 mile
+                ride up Mount Pinos, it was finally time for the fun part. Two miles into the descent I was bronco’d over the handlebars and was a
+                literal Flying (flailing) Dutchman. I crashed, separated my shoulder, and needless to say broke my helmet with one hell of a knock
+                onto a rock. 
+              </p>
+              <br>
+              <p class="col-sm-12 col-md-12" align="center">
+                It was a few weeks later that I started thinking “I really gotta get my sh*t together.” and when looking for online
+                schools with a business program I stumbled upon coding; then started watching copious amounts of YouTube videos, checking out a few
+                online resources, and started doing some prework for coding bootcamps. Fast forward a few months and I’m lucky enough to be in one of
+                the top bootcamps in NYC. Today I work on projects primarily for myself and look for work where ever. The running joke since has been
+                “dude, how hard did you really hit your head?!” and to that I say, “Hard enough.”
+              </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <h2 align="center">Employment History</h2><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3 col-md-3">
+          <a href="https://www.rei.com/" class="project-title" align="center"> REI</a>
+            <br>
+          <strong>Bike Technician</strong><br><br>
+          <p>I've been aroud bicycles my entire life. At REI I was fortunate enough to work on some truly unique projects.
+          I absolutely loved diving deep into the specifications of every frame, component, and wheel; building fast road bikes and comfy beach cruisers;
+          and fine tuning derailleurs, wheels, brakes, and shocks.</p>
+        </div>
+
+        <div class="col-sm-3 col-md-3">
+          <a href="http://paddlenmore.com/" align="center" class="project-title">Paddle-N-More</a>
+            <br>
+          <strong>Program Coordinator</strong><br><br>
+          <p>Whether it's 3 in the morning or 9 at night, I don't thinkg there's ever a bad time to go paddling.
+            If you're even lucky enough to be in the Ithaca area (it's gorges) you should check out Paddle-N-More. Along with
+            working in the shop, I lead tours and taught stand up paddleboarding (SUP) and kayaking lessons. </p>
+        </div>
+
+        <div class="col-sm-3 col-md-3">
+          <a href="http://wgaforchildren.org/" class="project-title">The William George Agency</a>
+            <br>
+          <strong>Residential Counselor</strong><br><br>
+          <p>I hope we all get the oportunity to work and give back; to try and make this crazy world, even just a little bit
+          better. I mentored at-risk teenagers to teach them various aspects of life managment. Being part of a team all working
+          to better the lives of these teens was truly an experience I still carry with me today.</p>
+        </div>
+
+        <div class="col-sm-3 col-md-3">
+          <a href="http://www.priweb.org/outreach.php?page=ednaturectr" class="project-title">Cayuga Nature Center</a>
+            <br>
+          <strong>Challenge Course Facilitator</strong><br><br>
+          <p>My time at the  Cayuga Nature Center was a very special. Here I had worked with amazing people to
+          facilitate various experiential education programs for other nonprofits as well as local schools. Not to mention
+          the awesome 6 story treehouse in the back!</p>
+        </div>
+      </div>
+    </div>
+
+
+<br><br><br><br>
+
+
+    <nav class="navbar-default navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-1 col-sm-1 col-md-1">
+          </div>
+          <div class="col-xs-9 col-sm-9 col-md-9 double-pad-top">
+            <h6>www.raoulkoopman.com                              <span class="glyphicon glyphicon-tree-conifer"></span> 2016</h6>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 half-pad-top">
+            <a href= "/contact" class="blue-ivy"><sup class="email-tag">Email Me</sup> <span class="glyphicon glyphicon-envelope icon-size"></span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+  </body>
+</html>

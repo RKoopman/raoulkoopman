@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= button_to "delete", @post, :method => :delete %>
+
+    <div class="row">
+      <%= form_for(@post) do |f| %>
+          <div class="col-md-2">
+            <%= f.submit %>
+          </div>
+          <div class="col-md-6">
+            <div class="col-md-4">
+              <label>Post title:</label>
+            </div>
+            <div class="col-md-8">
+              <%= f.text_field :title %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label>Category:</label>
+            <select name="post[category_id]" type="text">
+                <%Category.all.each do |cat|%>
+                    <option value="<%=cat.id%>"><%=cat.name%></option>
+                <%end%>
+            </select><br>
+          </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <%= f.trix_editor :body, :class => "white" %>
+        </div>
+      </div>
+      <% end %>
+  </body>
+</html>

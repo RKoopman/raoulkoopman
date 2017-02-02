@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container nav nav-pills nav-justified">
+      <div class="row pad-top">
+          <div class="nav_bar_page_links">
+            <div class="col-md-1 nav nav-pills nav-justified">
+              <a href= "/" >Home</a>
+            </div>
+            <div class="col-md-1 nav nav-pills nav-justified">
+              <a href= "/posts" >Blog</a>
+            </div>
+            <div class="col-md-1 nav nav-pills nav-justified">
+              <a href= "/about" >About</a>
+            </div>
+            <div class="col-md-1 nav nav-pills nav-justified">
+              <a href= "/contacts" >Contact</a>
+            </div>
+            <div class="col-md-1 nav nav-pills nav-justified">
+              <% if session[:admin_id] %>
+                <%= link_to "Admin", admin_path(session[:admin_id]), method: :get %>
+              <% end %>
+            </div>
+          </div>
+          <div class="nav_bar_sign", style="float:right">
+            <% if session[:admin_id] %>
+              <%= link_to "Sign out", logout_path, method: :delete %>
+            <% else %>
+              <%= link_to "Sign In", login_path, method: :get %>
+            <% end%>
+          </div>
+      </div>
+
+      <div class="admin_bar">
+        <div class="row double-pad-top">
+          <% if session[:admin_id] %>
+            <div class="col-md-2">
+              <a href= "/posts/new" >New Post</a>
+            </div>
+            <div class="col-md-2">
+              <a href= "/categories/new" >New Category</a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <%= form_for(@post) do |f| %>
+            <div class="col-md-2">
+              <%= f.submit %><br>
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-4">
+                <label>Post title:</label>
+              </div>
+              <div class="col-md-8">
+                <%= f.text_field :title %>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label>Category:</label>
+              <select name="post[category_id]" type="text">
+                  <%Category.all.each do |cat|%>
+                      <option value="<%=cat.id%>"><%=cat.name%></option>
+                  <%end%>
+              </select><br>
+            </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-12">
+          <%= f.trix_editor :body, :class => "white" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+
+
+
+
+  </body>
+</html>

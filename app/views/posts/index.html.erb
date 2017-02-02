@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/application.scss">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <nav class="navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-5 col-sm-5 col-md-5  nav nav-pills">
+            <a href= "/" class="blue-ivy">Home</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <a href= "/about" class="blue-ivy">About</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <a href= "/thekoopmankode" class="blue-ivy">Blog</a>
+          </div>
+          <div class="nav_bar_sign", style="float:right">
+            <% if session[:admin_id] %>
+              <a href= "/logout" class="blue-ivy"><sup class="email-tag"></sup> <span class="glyphicon glyphicon-log-out"></span></a>
+            <% else %>
+              <a href= "/login" class="blue-ivy"><sup class="email-tag"></sup> <span class="glyphicon glyphicon-log-in"></span></a>
+            <% end%>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid double-pad-top">
+      <div class="row quad-pad-top">
+        <% if session[:admin_id] %>
+          <div class="col-xs-1 col-sm-1 col-md-1">
+              <%= link_to "Admin", admin_path(session[:admin_id]), method: :get, :class => 'blue-ivy' %>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2" align="center">
+            <a href= "/posts/new" class="blue-ivy" >New Post</a>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4">
+            <a href= "/categories/new" class="blue-ivy" >New Category</a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+
+
+      <br>
+        <h1 align="center" class="title">The Koopman Kode</h1>
+      <br>
+
+          <div class="container center-vert-half">
+            <div class="row">
+              <div class="col-md-4 btn-group-vertical">
+                <% Category.all.each do |cat| %>
+                  <div class="col-sm-12  col-md-12 btn-group dropdown">
+                    <button class="btn btn-primary btn-sm dropdown-toggle half-icon-size pad-top pad-bottom" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <div class="col=sm-7 col-md-7"  align="right">
+                          <%= cat.name %>
+                        </div>
+                        <div class="col-md-5" align="left">
+                            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                        </div>
+                    </button>
+
+                    <div class="dropdown-menu col-md-12 pad-right dropMenu sub-menu" data-toggle="popover" aria-labelledby="dLabel">
+                      <% Post.all.each do |post| %>
+                        <% if post.category_id == cat.id %>
+                            <a href="posts/<%=post.id%>" class="post-links col-md-12" align="right"><%=post.title%></a>
+                            <p style="margin-bottom: 12px; font-size:12px" align="right"> <%= post.reading_length %> | <%= post.created %> </p>
+                        <% end %>
+                      <% end %>
+                    </div>
+
+                  </div>
+                <% end %>
+              </div>
+
+
+
+          <div class="col-md-8">
+            <p align="center" class="col-sm-12 col-md-12 center-vert">Here's a collection of posts. Some were written to better understand a topic and
+            others were just for fun. If you find any of these posts helpful please don't hesitate to get in contact.
+            I wish you the best of luck, and happy coding! </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <nav class="navbar-default navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-1 col-sm-1 col-md-1">
+          </div>
+          <div class="col-xs-9 col-sm-9 col-md-9 double-pad-top">
+            <h6>www.raoulkoopman.com                              <span class="glyphicon glyphicon-tree-conifer"></span>                                     2016</h6>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 half-pad-top">
+            <a href= "/contact" class="blue-ivy"><sup class="email-tag">Email Me</sup> <span class="glyphicon glyphicon-envelope icon-size"></span></a>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

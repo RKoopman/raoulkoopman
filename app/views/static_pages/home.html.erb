@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/application.scss">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <nav class="navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-5 col-sm-5 col-md-5  nav nav-pills">
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <a href= "/about" class="blue-ivy">About</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <a href= "/thekoopmankode" class="blue-ivy">Blog</a>
+          </div>
+          <div class="nav_bar_sign", style="float:right">
+            <% if session[:admin_id] %>
+              <a href= "/logout" class="blue-ivy"><sup class="email-tag"></sup> <span class="glyphicon glyphicon-log-out"></span></a>
+            <% else %>
+              <a href= "/login" class="blue-ivy"><sup class="email-tag"></sup> <span class="glyphicon glyphicon-log-in"></span></a>
+            <% end%>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+      <div class="container-fluid double-pad-top">
+        <div class="row quad-pad-top">
+          <% if session[:admin_id] %>
+            <div class="col-xs-1 col-sm-1 col-md-1">
+                <%= link_to "Admin", admin_path(session[:admin_id]), method: :get, :class => 'blue-ivy' %>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2" align="center">
+              <a href= "/posts/new" class="blue-ivy" >New Post</a>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <a href= "/categories/new" class="blue-ivy" >New Category</a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+
+      <div class="row">
+          <img src="assets/collection/IMG_1506.jpg" class="image-fit" alt="">
+          <h1 class="title float-header" align="center">Raoul Koopman</h1>
+          <h3 class="float-sub-header" align="center">Web Developer ~ Adventurer</h3>
+      </div>
+
+    <br>
+
+      <div class="navbar-default float-banner opacity">
+        <div class="col-sm-3 col-md-3">
+        </div>
+        <div class="col-sm-1 col-md-1">
+          <h2 align="right" class="banner-text double-pad-top sub-title">Discover</h2>
+        </div>
+        <div class="col-sm-1 col-md-1">
+          <h1 align="right" class="banner-text title"> | </h1>
+        </div>
+        <div class="col-sm-2 col-md-2">
+          <h2 align="center" class="banner-text double-pad-top sub-title">Create</h2>
+        </div>
+        <div class="col-sm-1 col-md-1">
+          <h1 align="left" class="banner-text title"> | </h1>
+        </div>
+        <div class="col-sm-2 col-md-2">
+          <h2 align="left" class="banner-text double-pad-top sub-title">Give Back</h2>
+        </div>
+        <div class="col-sm-2 col-md-2">
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row quad-pad-bottom">
+        <div class="col-xs-2 col-sm-2 col-md-2">
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8">
+          <p align="center">     After years of experience working with people in the Outdoor Recreation field as a facilitator,
+            a program coordinator, instructor, and a guide it was time for a change. I underwent a complete
+            career overhaul and learned how to write code.</p><br>
+          <p align="center">     Now I use my interpersonal skills to work with groups to not only develop awesome web applications,
+            but also help programmers become more aware of particular group dynamics.</p><br>
+
+
+
+          <h3  align="center" class="super-pad-tb">Please feel free to get in contact!</>
+        </div>
+        <div class="col-xs-2 col-sm-2 col-md-2">
+        </div>
+      </div>
+
+    <hr width="70%">
+
+
+    <div class="row super-pad-top">
+      <div class="col-sm-12 col-md-12">
+        <h2 align="center" class="title blue-ivy">Projects</h2><br>
+      </div>
+    </div>
+
+    <div class="row quad-pad-top">
+        <div class="col-sm-4 col-md-4 pad-top" align="center">
+          <img src="assets/group_shots/IMG_4594.jpg" class="img-thumbnail resize-img" >
+        </div>
+        <div class="col-sm-8 col-md-8">
+          <p><strong class="project-title">Bandmate</strong> - Discover and connect with local musicians to set up jam sessions. <a href="https://github.com/eaharonoff/BandMate" target="_blank">(front end)</a> <a href="https://github.com/eaharonoff/BandMate-API" target="_blank">(back end)</a><br>
+          + Built API using Ruby on Rails and the MVC pattern.<br>
+          + Designed the database schema and configured ActiveRecord associations.<br>
+          + Built the front end using JavaScript, React, and Redux.<br>
+          + Kept a strong focus on the user experience to figure out how the application should function and be laid out.</p><br>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4 col-md-4 pad-top" align="center">
+        <img src="assets/collection/spot_finder.png" class="img-thumbnail resize-img" >
+      </div>
+      <div class="col-sm-8 col-md-8">
+        <p><strong class="project-title">Spot Finder</strong> - The easiest way to find the nearest parking garage nearest your destination. <a href="https://github.com/leearaneta/spot-finder" target="_blank">(GitHub repo)</a><br>
+            + Used a Google: Places API to create the content of the map.<br>
+            + Organized the front end with CSS, HTML, Bootstrap, and jQuery.<br>
+            + Built the back end using JavaScript.<br>
+            + Incorporated Handlebars for the layout of the application</p><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4 col-md-4 pad-top" align="center">
+        <img src="assets/collection/less-than-helpful.png" class="img-thumbnail resize-img" >
+      </div>
+      <div class="col-sm-8 col-md-8">
+        <p><strong class="project-title">Less Than Helpful</strong> - A mini Sinatra project to minic a search engine and return random results. <a href="https://github.com/RKoopman/less_than_helpful" target="_blank">(GitHub repo)</a><br>
+            + Built entirely on Sinatra.<br>
+            + Built out the front end with CSS and HTML.<br>
+            <br>
+      </div>
+    </div>
+
+    <div class="row home-pad-bottom">
+      <div class="col-sm-4 col-md-4 pad-top" align="center">
+      </div>
+      <div class="col-sm-8 col-md-8">
+        <p><strong class="project-title">This Site!</strong> - A simple layout to learn more about me and read blogs posts.<br>
+            + Build on Rails, using ActiveRecord for the DB.<br>
+            + Front end built out using Bootstrap, CSS, and HTML.<br>
+            + Wanted to keep a clean and simple interface.<br></p>
+      </div>
+    </div>
+
+
+    <nav class="navbar-default navbar-fixed-bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-1 col-sm-1 col-md-1">
+          </div>
+          <div class="col-xs-9 col-sm-9 col-md-9 double-pad-top">
+            <h6>www.raoulkoopman.com                              <span class="glyphicon glyphicon-tree-conifer"></span>                                     2016</h6>
+          </div>
+          <div class="col-xs-2 col-sm-2 col-md-2 half-pad-top">
+            <a href= "/contact" class="blue-ivy"><sup class="email-tag">Email Me</sup> <span class="glyphicon glyphicon-envelope icon-size"></span></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

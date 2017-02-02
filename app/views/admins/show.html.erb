@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/application.scss">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <nav class="navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-1 col-sm-1 col-md-1  nav nav-pills">
+            <a href= "/" class="blue-ivy">Home</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <a href= "/about" class="blue-ivy">About</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <a href= "/thekoopmankode" class="blue-ivy">Blog</a>
+          </div>
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+            <% if session[:admin_id] %>
+              <%= link_to "Admin", admin_path(session[:admin_id]), method: :get, :class => 'blue-ivy' %>
+            <% end %>
+          </div>
+          <div class="nav_bar_sign", style="float:right">
+            <% if session[:admin_id] %>
+              <a href= "/logout" class="blue-ivy"><sup class="email-tag"></sup> <span class="glyphicon glyphicon-log-out"></span></a>
+            <% else %>
+              <a href= "/login" class="blue-ivy"><sup class="email-tag"></sup> <span class="glyphicon glyphicon-log-in"></span></a>
+            <% end%>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+      <div class="admin_bar double-pad-top">
+        <div class="row pad-top">
+          <% if session[:admin_id] %>
+            <div class="col-md-2">
+              <a href= "/posts/new" >New Post</a>
+            </div>
+            <div class="col-md-2">
+              <a href= "/categories/new" >New Category</a>
+            </div>
+            <div class="col-md-8">
+              <a href= "/admins/<%=@admin.id%>/edit" >Edit Profile</a>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+      <br>
+
+      <div class="admin_info">
+        <label for="admin_name">User Name:</label>
+        <%=@admin.user_name %><br>
+        <label for="admin_email">Email:</label>
+        <%= @admin.email %>
+      </div>
+
+  </body>
+</html>

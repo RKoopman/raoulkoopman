@@ -1,0 +1,159 @@
+/*
+*= require bootstrap_stuff.scss
+*= require admin.css
+*= require contact.css
+*= require custom.css
+*= require home.css
+*= require post.css
+*= require sessions.css
+*= require trix
+*/
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font: 18px/1.4 sans-serif;
+  background-color: white;
+}
+
+nav a {
+  color: #ADD8E6;
+  display: block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #566D7E;
+}
+
+nav ul, nav ul li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav > ul {
+  background: blue;
+  text-align: center;
+}
+
+nav > ul > li {
+  display: inline-block;
+  border-left: solid 1px #aaa;
+}
+
+nav > ul > li:first-child {
+  border-left: none;
+}
+
+nav > div {
+  padding-top: 0px;
+}
+
+.sub-menu {
+  transition: all 1.3s ease-in-out 1s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+  background: #EEE;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 900;
+  }
+
+p, div {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+a {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 900;
+}
+
+.center-vert {
+  padding-top: 80px;
+}
+
+.center-vert-half {
+  padding-top: 40px;
+}
+
+strong {
+  font-weight: 900;
+}
+
+.image-fit {
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+.float-header {
+  left: 0;
+  position:absolute;
+  text-align:center;
+  top: 310px;
+  width: 100%
+}
+
+.float-sub-header {
+  left: 0;
+  position:absolute;
+  text-align:center;
+  top: 410px;
+  width: 100%
+}
+
+.float-banner {
+  left: 0;
+  position:absolute;
+  text-align:center;
+  top: 800px;
+  width: 100%
+}
+
+.title {
+  font-size: 80px;
+}
+
+.sub-title {
+  font-size: 40px;
+}
+
+.half-sub-title {
+  font-size: 24px;
+}
+
+.white {
+  background-color: white;
+}
+
+.project-title {
+  font-weight: 900;
+  font-size: 125%;
+}
+
+.glyph-size {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.post-links {
+  margin-bottom: -5px;
+  font-size:20px;
+}
+
+.circular-landscape {
+  display: inline-block;
+  position: relative;
+  width: auto;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.circular-landscape img {
+  width: auto;
+  height: 100%;
+}
