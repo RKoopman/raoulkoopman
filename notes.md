@@ -6,6 +6,8 @@ ToDos:
 
 
 16) Reorganize stylesheets.
+
+17) Round edges on input fields.
 ________________________________________________________________________________
 
 
