@@ -31,7 +31,7 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
-# Precompile asset pipline
+# precompile asset pipline
   config.assets.initialize_on_precompile = false
 
   # Generate digests for assets URLs
