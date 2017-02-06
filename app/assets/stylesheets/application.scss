@@ -53,6 +53,14 @@ nav > div {
   padding-top: 0px;
 }
 
+input {
+    border-radius: 5px;
+}
+
+textarea {
+  border-radius: 5px;
+}
+
 .sub-menu {
   transition: all 1.3s ease-in-out 1s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
   background: #EEE;
