@@ -7,7 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 
-module KoopmanDevs
+module RaoulKoopman
   class Application < Rails::Application
 
   end
