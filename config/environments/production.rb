@@ -32,7 +32,7 @@ Rails.application.configure do
   config.assets.compile = true
 
 # precompile asset pipline
-  config.assets.initialize_on_precompile = false
+  config.assets.initialize_on_precompile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
