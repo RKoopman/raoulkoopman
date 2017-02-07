@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to admin_path(session[:admin_id])
     else
       flash.now[:message] = "please enter the correct password"
-      render 'new'
+      redirect_to root_path
     end
   end
 
