@@ -47,6 +47,7 @@ nav > ul > li {
 
 nav > ul > li:first-child {
   border-left: none;
+  border-right: none;
 }
 
 nav > div {
@@ -105,24 +106,24 @@ strong {
 
 .float-header {
   left: 0;
+  right: 0;
   position:absolute;
-  text-align:center;
   top: 310px;
   width: 100%
 }
 
 .float-sub-header {
   left: 0;
+  right: 0;
   position:absolute;
-  text-align:center;
   top: 410px;
   width: 100%
 }
 
 .float-banner {
   left: 0;
+  right: 0;
   position:absolute;
-  text-align:center;
   top: 800px;
   width: 100%
 }
