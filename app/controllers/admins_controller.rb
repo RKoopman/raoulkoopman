@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
-  before_action :require_login
-  before_action :correct_admin, only: [:edit, :update]
+  # before_action :require_login
+  # before_action :correct_admin, only: [:edit, :update]
 
   def index
     @admins = Admin.all
