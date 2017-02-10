@@ -21,10 +21,10 @@
           <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
             <a href= "/about" class="blue-ivy">About</a>
           </div>
-          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+          <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills hidden">
             <a href= "/thekoopmankode" class="blue-ivy">Blog</a>
           </div>
-          <div class="nav_bar_sign", style="float:right">
+          <div class="nav_bar_sign hidden", style="float:right">
             <% if session[:admin_id] %>
               <a href= "/logout" class="blue-ivy"><sup class="email-tag"></sup> <span class="glyphicon glyphicon-log-out"></span></a>
             <% else %>
