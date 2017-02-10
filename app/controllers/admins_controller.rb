@@ -16,7 +16,7 @@ class AdminsController < ApplicationController
 
   def create
     @admin = Admin.create(admin_params)
-    redirect_to admins_path
+    redirect_to admins_path(@admin)
   end
 
   def edit
@@ -37,8 +37,8 @@ class AdminsController < ApplicationController
 
 private
 
-  def admin_params
-    params.require(:admin).permit(:user_name, :email, :password_digest)
+  def admin_params(*args)
+    params.require(:admin).permit(*args)
   end
 
   def correct_admin
