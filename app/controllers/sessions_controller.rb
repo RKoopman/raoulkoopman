@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     admin = Admin.find_by(email: params[:admin][:email])
-    if admin.authenticate(params[:admin][:password_digest])
+    if admin.authenticate(params[:admin][:password_digest]) #this is where heroku login is failing.
       session[:admin_id] = admin.id
       redirect_to admin_path(session[:admin_id])
     else
