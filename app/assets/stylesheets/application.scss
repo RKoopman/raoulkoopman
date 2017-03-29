@@ -173,13 +173,17 @@ strong {
   height: 100%;
 }
 
+.email-glyph {
+  font-size: 35px;
+  color: white;
+  margin: 7px 0px 0px -3px;
+}
 
-.email-button {
-  color: #ADD8E6;
-  border-color: 2px solid black;
-  width: 100px;
+#email-button {
+  height: 65px;
+  width: 65px;
+  background: #3090C7;
+  border-radius: 50%;
   float: right;
-  position: fixed;
-  padding: 800px;
-  z-index: 1;
+  margin-right: 40px;
 }
