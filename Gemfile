@@ -9,7 +9,7 @@ gem 'taps'
 gem 'puma', '~> 3.0'                      # Use Puma as the app server
 gem 'uglifier', '>= 1.3.0'                # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.2'              # Use CoffeeScript for .coffee assets and views
-gem 'figaro', '~> 1.1', '>= 1.1.1'
+# gem 'figaro', '~> 1.1', '>= 1.1.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
