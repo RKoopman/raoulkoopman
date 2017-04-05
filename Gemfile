@@ -9,16 +9,16 @@ gem 'taps'
 gem 'puma', '~> 3.0'                      # Use Puma as the app server
 gem 'uglifier', '>= 1.3.0'                # Use Uglifier as compressor for JavaScript assets
 gem 'coffee-rails', '~> 4.2'              # Use CoffeeScript for .coffee assets and views
-# gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'figaro', '~> 1.1', '>= 1.1.1'      #(took out 4/4)
 
 # Da Emails!!
 gem 'mail_form'
 # Rich text editor
 gem 'trix'
 
-# gem 'jquery-rails'                        # Use jquery as the JavaScript library
-# gem 'turbolinks', '~> 5'                  # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-# gem 'jbuilder', '~> 2.5'                  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jquery-rails'                        # Use jquery as the JavaScript library          (took out 4/4)
+gem 'turbolinks', '~> 5'                  # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks        (took out 4/4)
+gem 'jbuilder', '~> 2.5'                  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder       (took out 4/4)
 # gem 'redis', '~> 3.0'                   # Use Redis adapter to run Action Cable in production
 gem 'bcrypt', '~> 3.1.7'                  # Use ActiveModel has_secure_password
 # style:

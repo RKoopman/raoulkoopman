@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   get    '/about',   to: 'static_pages#about'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
-  get '/logout',  to: 'sessions#destroy'
+  get    '/logout',  to: 'sessions#destroy'
 
 end
