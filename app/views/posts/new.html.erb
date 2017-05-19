@@ -6,47 +6,42 @@
   </head>
   <body>
     <div class="container nav nav-pills nav-justified">
-      <div class="row pad-top">
-          <div class="nav_bar_page_links">
-            <div class="col-md-1 nav nav-pills nav-justified">
-              <a href= "/" >Home</a>
+      <nav class="navbar-default navbar-fixed-top col-xs-12">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-5 col-sm-5 col-md-5  nav nav-pills">
             </div>
-            <div class="col-md-1 nav nav-pills nav-justified">
-              <a href= "/posts" >Blog</a>
+            <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+              <a href= "/about" class="blue-ivy">About</a>
             </div>
-            <div class="col-md-1 nav nav-pills nav-justified">
-              <a href= "/about" >About</a>
+            <div class="col-xs-1 col-sm-1 col-md-1 nav nav-pills">
+              <a href= "/thekoopmankode" class="blue-ivy">Blog</a>
             </div>
-            <div class="col-md-1 nav nav-pills nav-justified">
-              <a href= "/contacts" >Contact</a>
-            </div>
-            <div class="col-md-1 nav nav-pills nav-justified">
+            <div class="nav_bar_sign", style="float:right">
               <% if session[:admin_id] %>
-                <%= link_to "Admin", admin_path(session[:admin_id]), method: :get %>
-              <% end %>
+                <a href= "/logout" class="blue-ivy"> <span class="glyphicon glyphicon-log-out"></span></a>
+              <% else %>
+                <a href= "/login" class="blue-ivy"> <span class="glyphicon glyphicon-log-in"></span></a>
+              <% end%>
             </div>
           </div>
-          <div class="nav_bar_sign", style="float:right">
-            <% if session[:admin_id] %>
-              <%= link_to "Sign out", logout_path, method: :delete %>
-            <% else %>
-              <%= link_to "Sign In", login_path, method: :get %>
-            <% end%>
-          </div>
-      </div>
-
-      <div class="admin_bar">
-        <div class="row double-pad-top">
-          <% if session[:admin_id] %>
-            <div class="col-md-2">
-              <a href= "/posts/new" >New Post</a>
-            </div>
-            <div class="col-md-2">
-              <a href= "/categories/new" >New Category</a>
-            </div>
-          <% end %>
         </div>
-      </div>
+      </nav>
+      <% if session[:admin_id] %>
+        <div class="container-fluid double-pad-top">
+          <div class="row quad-pad-top">
+              <div class="col-xs-1 col-sm-1 col-md-1">
+                  <%= link_to "Admin", admin_path(session[:admin_id]), method: :get, :class => 'blue-ivy' %>
+              </div>
+              <div class="col-xs-2 col-sm-2 col-md-2" align="center">
+                <a href= "/posts/new" class="blue-ivy" >New Post</a>
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4">
+                <a href= "/categories/new" class="blue-ivy" >New Category</a>
+              </div>
+          </div>
+        </div>
+        <% end %>
     </div>
     <br>
     <div class="container">
